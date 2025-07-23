@@ -1,25 +1,42 @@
-import logo from './logo.svg';
-import './App.css';
+// Libraries
+import React from "react"
 
+// Components
+import Header from "./components/Header.jsx"
+import Categories from "./components/Categories.jsx"
+import Sort from "./components/Sort.jsx"
+import PizzaItem from "./components/PizzaItem.jsx"
+
+// Styles
+import "./scss/app.scss"
+
+// App
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div class="wrapper">
+      <Header />
+      <div class="content">
+        <div class="container">
+          <div class="content__top">
+            <Categories />
+            <Sort />
+          </div>
+          <h2 class="content__title">Все пиццы</h2>
+          <div class="content__items">
+            <PizzaItem />
+            <PizzaItem />
+            <PizzaItem />
+            <PizzaItem />
+            <PizzaItem />
+            <PizzaItem />
+            <PizzaItem />
+            <PizzaItem />
+            <PizzaItem />
+          </div>
+        </div>
+      </div>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
