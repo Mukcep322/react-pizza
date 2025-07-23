@@ -13,6 +13,7 @@ function PizzaItem({title, price, imageUrl, sizes, types}) {
         <ul>
           {types.map((typeId) => (
             <li
+              key={typeId}
               className={activeType === typeId ? "active" : ""}
               onClick={() => setActiveType(typeId)}>
               {typeNames[typeId]}
@@ -20,8 +21,9 @@ function PizzaItem({title, price, imageUrl, sizes, types}) {
           ))}
         </ul>
         <ul>
-          {sizes.map((size) => (
+          {sizes.map((size, i) => (
             <li
+              key={i}
               className={activeSize === size ? "active" : ""}
               onClick={() => setActiveSize(size)}>
               {size} см.
